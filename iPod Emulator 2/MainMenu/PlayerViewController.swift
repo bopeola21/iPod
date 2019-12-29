@@ -28,6 +28,7 @@ class PlayerViewController: UIViewController {
     var ableToUpdate = true
     var query: MPMediaQuery!
     var musicPlayerManager = Model.shared.musicPlayerManager
+    var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +58,6 @@ class PlayerViewController: UIViewController {
             
         }
 
-        updateView()
-
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(handleMusicPlayerManagerDidUpdateState),
                                                name: MusicPlayerManager.didUpdateNowPlaying,
@@ -70,40 +69,43 @@ class PlayerViewController: UIViewController {
         iPodNavigationBar.shared.navTitleLabel.text = "Now Playing"
         ClickViewSingleton.shared.delegate = self
         ClickViewSingleton.shared.buttonIsEnabled = true
+        updateView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateProgressView()
-        updateViewRepeat()
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateViewRepeat), userInfo: nil, repeats: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         ClickViewSingleton.shared.buttonIsEnabled = false
     }
-    
+
     func updateView() {
-        guard let currentMediaItem = musicPlayerManager.currentMediaItem,
-            let selectedRow = musicPlayerManager.selectedRow else { return }
+        DispatchQueue.main.async {
+            guard let currentMediaItem = self.musicPlayerManager.currentMediaItem,
+                let selectedRow = self.musicPlayerManager.selectedRow else { return }
 
-        totalLabel.text = "\(selectedRow + 1) of \(Model.shared.musicPlayerManager.queue?.count ?? 1)"
-        nameLabel.text = musicPlayerManager.currentMediaItem?.title
-        artistLabel.text = musicPlayerManager.currentMediaItem?.artist
-        albumLabel.text = musicPlayerManager.currentMediaItem?.albumTitle
-        imageView.image = musicPlayerManager.currentMediaItem?.artwork?.image(at: CGSize(width: 150, height: 150))
-        let formattedString = stringForTime(time: currentMediaItem.playbackDuration)
-
-        endSeekLabel.text = formattedString
+            self.totalLabel.text = "\(selectedRow + 1) of \(Model.shared.musicPlayerManager.queue?.count ?? 1)"
+            self.nameLabel.text = self.musicPlayerManager.currentMediaItem?.title
+            self.artistLabel.text = self.musicPlayerManager.currentMediaItem?.artist
+            self.albumLabel.text = self.musicPlayerManager.currentMediaItem?.albumTitle
+            self.imageView.image = self.musicPlayerManager.currentMediaItem?.artwork?.image(at: CGSize(width: 150, height: 150))
+            let formattedString = self.stringForTime(time: currentMediaItem.playbackDuration)
+            self.endSeekLabel.text = formattedString
+        }
     }
     
-    func updateViewRepeat() {
+    @objc func updateViewRepeat() {
         if musicPlayerManager.currentMediaItem == nil { return }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+
+       // DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.updateProgressView()
-            self.updateViewRepeat()
-        }
+            self.updateView()
+            //self.updateViewRepeat()
+       // }
     }
     
     func updateProgressView() {
@@ -119,10 +121,13 @@ class PlayerViewController: UIViewController {
     
     func setMedia(index: Int) {
         musicPlayerManager.playSongWithIndex(index)
-        self.updateView()
+        updateView()
     }
     
     deinit {
+        timer?.invalidate()
+        timer = nil
+        
         // Remove all notification observers.
         NotificationCenter.default.removeObserver(self,
                                                   name: MusicPlayerManager.didUpdateState,
@@ -138,18 +143,27 @@ class PlayerViewController: UIViewController {
             musicPlayerManager.currentMediaItem?.artist != nowPlayingItem?.artist,
             musicPlayerManager.currentMediaItem?.playbackDuration != nowPlayingItem?.playbackDuration {
             
+//            let index = musicPlayerManager.musicPlayerController.indexOfNowPlayingItem
+//            setMedia(index: index)
+
             if let index = musicPlayerManager.queue?.firstIndex(where: { (item: MPMediaItem) -> Bool in
-                
                 if nowPlayingItem?.title == item.title &&
                     nowPlayingItem?.artist == item.artist &&
                     nowPlayingItem?.playbackDuration == item.playbackDuration {
                     return true
                 }
-                
                 return false
             }) {
-                setMedia(index: index)
+                //setMedia(index: index)
+                musicPlayerManager.selectedRow = index
+                //updateView()
+            } else {
+                musicPlayerManager.overrideCurrentMediaItem = nowPlayingItem
+                musicPlayerManager.selectedRow = 0
+                //updateView()
             }
+            
+            updateView()
         }
     }
     
