@@ -1,0 +1,793 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6F625BB1A23FEDE1FB3C89FC /* Pods_iPod_Emulator_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9419FCA01FDEE4DFFDD8E4 /* Pods_iPod_Emulator_2.framework */; };
+		82603DAE23B0884200D8DDED /* MusicPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82603DAD23B0884200D8DDED /* MusicPlayerManager.swift */; };
+		82603DB023B288A600D8DDED /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82603DAF23B288A600D8DDED /* ProgressView.swift */; };
+		8265E43523B84738005BF12F /* devToken.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8265E43423B84738005BF12F /* devToken.txt */; };
+		8265E43723B84853005BF12F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265E43623B84853005BF12F /* Helper.swift */; };
+		82660AFF23B0010D00FE35D6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82660AFE23B0010D00FE35D6 /* Request.swift */; };
+		82660B0123B0043100FE35D6 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82660B0023B0043100FE35D6 /* Network.swift */; };
+		82660B0323B0147800FE35D6 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82660B0223B0147800FE35D6 /* Playlist.swift */; };
+		8270AC0723B01BAE00ECD5B2 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8270AC0623B01BAE00ECD5B2 /* PlaylistViewController.swift */; };
+		8270AC0923B020A900ECD5B2 /* PlaylistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8270AC0823B020A900ECD5B2 /* PlaylistDetailViewController.swift */; };
+		8270AC0B23B02C0A00ECD5B2 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8270AC0A23B02C0A00ECD5B2 /* Song.swift */; };
+		8270AC0D23B0774600ECD5B2 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8270AC0C23B0774600ECD5B2 /* PlayerViewController.swift */; };
+		82F08AA323AD9D6500D189C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F08AA223AD9D6500D189C8 /* AppDelegate.swift */; };
+		82F08AA523AD9D6500D189C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F08AA423AD9D6500D189C8 /* SceneDelegate.swift */; };
+		82F08AA723AD9D6500D189C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F08AA623AD9D6500D189C8 /* ViewController.swift */; };
+		82F08AAA23AD9D6500D189C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F08AA823AD9D6500D189C8 /* Main.storyboard */; };
+		82F08AAC23AD9D6700D189C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F08AAB23AD9D6700D189C8 /* Assets.xcassets */; };
+		82F08AAF23AD9D6700D189C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F08AAD23AD9D6700D189C8 /* LaunchScreen.storyboard */; };
+		82F08ABA23AD9D6800D189C8 /* iPod_Emulator_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F08AB923AD9D6800D189C8 /* iPod_Emulator_2Tests.swift */; };
+		82F08AC523AD9D6800D189C8 /* iPod_Emulator_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F08AC423AD9D6800D189C8 /* iPod_Emulator_2UITests.swift */; };
+		82F08AD323AD9D8B00D189C8 /* ClickWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F08AD223AD9D8A00D189C8 /* ClickWheelView.swift */; };
+		82F08AD523AE086A00D189C8 /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F08AD423AE086A00D189C8 /* MainMenuVC.swift */; };
+		82FE010423AEFFA2001D7D93 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE010323AEFFA2001D7D93 /* MainCell.swift */; };
+		82FE010623AF022F001D7D93 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE010523AF022F001D7D93 /* UIColor.swift */; };
+		82FE010823AF05C9001D7D93 /* iPodNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE010723AF05C9001D7D93 /* iPodNavigationBar.swift */; };
+		82FE010A23AF1138001D7D93 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE010923AF1138001D7D93 /* UIImage.swift */; };
+		82FE010C23AF2964001D7D93 /* MusicMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE010B23AF2964001D7D93 /* MusicMenuVC.swift */; };
+		82FE010E23AF2E75001D7D93 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE010D23AF2E75001D7D93 /* BaseViewController.swift */; };
+		82FE011023AFE60D001D7D93 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE010F23AFE60D001D7D93 /* Model.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		82F08AB623AD9D6800D189C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82F08A9723AD9D6500D189C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82F08A9E23AD9D6500D189C8;
+			remoteInfo = "iPod Emulator 2";
+		};
+		82F08AC123AD9D6800D189C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82F08A9723AD9D6500D189C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82F08A9E23AD9D6500D189C8;
+			remoteInfo = "iPod Emulator 2";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A9419FCA01FDEE4DFFDD8E4 /* Pods_iPod_Emulator_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPod_Emulator_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4172703158D6B15B4E669D67 /* Pods-iPod Emulator 2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPod Emulator 2.debug.xcconfig"; path = "Target Support Files/Pods-iPod Emulator 2/Pods-iPod Emulator 2.debug.xcconfig"; sourceTree = "<group>"; };
+		445D0923BBABCCF65FA44DF2 /* Pods-iPod Emulator 2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPod Emulator 2.release.xcconfig"; path = "Target Support Files/Pods-iPod Emulator 2/Pods-iPod Emulator 2.release.xcconfig"; sourceTree = "<group>"; };
+		82603DAD23B0884200D8DDED /* MusicPlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerManager.swift; sourceTree = "<group>"; };
+		82603DAF23B288A600D8DDED /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		8265E43423B84738005BF12F /* devToken.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = devToken.txt; sourceTree = "<group>"; };
+		8265E43623B84853005BF12F /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		82660AFE23B0010D00FE35D6 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		82660B0023B0043100FE35D6 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		82660B0223B0147800FE35D6 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		8270AC0623B01BAE00ECD5B2 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
+		8270AC0823B020A900ECD5B2 /* PlaylistDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDetailViewController.swift; sourceTree = "<group>"; };
+		8270AC0A23B02C0A00ECD5B2 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		8270AC0C23B0774600ECD5B2 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		82F08A9F23AD9D6500D189C8 /* iPod Emulator 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPod Emulator 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		82F08AA223AD9D6500D189C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		82F08AA423AD9D6500D189C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		82F08AA623AD9D6500D189C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		82F08AA923AD9D6500D189C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		82F08AAB23AD9D6700D189C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		82F08AAE23AD9D6700D189C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		82F08AB023AD9D6700D189C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82F08AB523AD9D6800D189C8 /* iPod Emulator 2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iPod Emulator 2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		82F08AB923AD9D6800D189C8 /* iPod_Emulator_2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPod_Emulator_2Tests.swift; sourceTree = "<group>"; };
+		82F08ABB23AD9D6800D189C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82F08AC023AD9D6800D189C8 /* iPod Emulator 2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iPod Emulator 2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		82F08AC423AD9D6800D189C8 /* iPod_Emulator_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPod_Emulator_2UITests.swift; sourceTree = "<group>"; };
+		82F08AC623AD9D6800D189C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82F08AD223AD9D8A00D189C8 /* ClickWheelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickWheelView.swift; sourceTree = "<group>"; };
+		82F08AD423AE086A00D189C8 /* MainMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
+		82FE010323AEFFA2001D7D93 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		82FE010523AF022F001D7D93 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		82FE010723AF05C9001D7D93 /* iPodNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodNavigationBar.swift; sourceTree = "<group>"; };
+		82FE010923AF1138001D7D93 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		82FE010B23AF2964001D7D93 /* MusicMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMenuVC.swift; sourceTree = "<group>"; };
+		82FE010D23AF2E75001D7D93 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		82FE010F23AFE60D001D7D93 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		82F08A9C23AD9D6500D189C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F625BB1A23FEDE1FB3C89FC /* Pods_iPod_Emulator_2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82F08AB223AD9D6800D189C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82F08ABD23AD9D6800D189C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8265E43823B8491C005BF12F /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				82F08AA823AD9D6500D189C8 /* Main.storyboard */,
+				82FE010D23AF2E75001D7D93 /* BaseViewController.swift */,
+				82F08AA623AD9D6500D189C8 /* ViewController.swift */,
+				82F08AD423AE086A00D189C8 /* MainMenuVC.swift */,
+				82FE010B23AF2964001D7D93 /* MusicMenuVC.swift */,
+				8270AC0623B01BAE00ECD5B2 /* PlaylistViewController.swift */,
+				8270AC0823B020A900ECD5B2 /* PlaylistDetailViewController.swift */,
+				8270AC0C23B0774600ECD5B2 /* PlayerViewController.swift */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		8265E43923B84963005BF12F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				82F08AD223AD9D8A00D189C8 /* ClickWheelView.swift */,
+				82FE010723AF05C9001D7D93 /* iPodNavigationBar.swift */,
+				82603DAF23B288A600D8DDED /* ProgressView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8265E43A23B84987005BF12F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				82FE010F23AFE60D001D7D93 /* Model.swift */,
+				82603DAD23B0884200D8DDED /* MusicPlayerManager.swift */,
+				82660B0223B0147800FE35D6 /* Playlist.swift */,
+				8270AC0A23B02C0A00ECD5B2 /* Song.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8265E43B23B849AD005BF12F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				82FE010523AF022F001D7D93 /* UIColor.swift */,
+				82FE010923AF1138001D7D93 /* UIImage.swift */,
+				8265E43623B84853005BF12F /* Helper.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8265E43C23B849CD005BF12F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				82FE010323AEFFA2001D7D93 /* MainCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8265E43D23B849E2005BF12F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				82660AFE23B0010D00FE35D6 /* Request.swift */,
+				82660B0023B0043100FE35D6 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		82F08A9623AD9D6500D189C8 = {
+			isa = PBXGroup;
+			children = (
+				82F08AA123AD9D6500D189C8 /* iPod Emulator 2 */,
+				82F08AB823AD9D6800D189C8 /* iPod Emulator 2Tests */,
+				82F08AC323AD9D6800D189C8 /* iPod Emulator 2UITests */,
+				82F08AA023AD9D6500D189C8 /* Products */,
+				EA734132B9AFD98300247352 /* Pods */,
+				DE58A615CBB7BC62C15EAD51 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		82F08AA023AD9D6500D189C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				82F08A9F23AD9D6500D189C8 /* iPod Emulator 2.app */,
+				82F08AB523AD9D6800D189C8 /* iPod Emulator 2Tests.xctest */,
+				82F08AC023AD9D6800D189C8 /* iPod Emulator 2UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		82F08AA123AD9D6500D189C8 /* iPod Emulator 2 */ = {
+			isa = PBXGroup;
+			children = (
+				8265E43D23B849E2005BF12F /* Network */,
+				8265E43C23B849CD005BF12F /* Cells */,
+				8265E43B23B849AD005BF12F /* Extensions */,
+				8265E43A23B84987005BF12F /* Models */,
+				8265E43923B84963005BF12F /* Views */,
+				8265E43823B8491C005BF12F /* MainMenu */,
+				82F08AA223AD9D6500D189C8 /* AppDelegate.swift */,
+				82F08AA423AD9D6500D189C8 /* SceneDelegate.swift */,
+				8265E43423B84738005BF12F /* devToken.txt */,
+				82F08AAB23AD9D6700D189C8 /* Assets.xcassets */,
+				82F08AAD23AD9D6700D189C8 /* LaunchScreen.storyboard */,
+				82F08AB023AD9D6700D189C8 /* Info.plist */,
+			);
+			path = "iPod Emulator 2";
+			sourceTree = "<group>";
+		};
+		82F08AB823AD9D6800D189C8 /* iPod Emulator 2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				82F08AB923AD9D6800D189C8 /* iPod_Emulator_2Tests.swift */,
+				82F08ABB23AD9D6800D189C8 /* Info.plist */,
+			);
+			path = "iPod Emulator 2Tests";
+			sourceTree = "<group>";
+		};
+		82F08AC323AD9D6800D189C8 /* iPod Emulator 2UITests */ = {
+			isa = PBXGroup;
+			children = (
+				82F08AC423AD9D6800D189C8 /* iPod_Emulator_2UITests.swift */,
+				82F08AC623AD9D6800D189C8 /* Info.plist */,
+			);
+			path = "iPod Emulator 2UITests";
+			sourceTree = "<group>";
+		};
+		DE58A615CBB7BC62C15EAD51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A9419FCA01FDEE4DFFDD8E4 /* Pods_iPod_Emulator_2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA734132B9AFD98300247352 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4172703158D6B15B4E669D67 /* Pods-iPod Emulator 2.debug.xcconfig */,
+				445D0923BBABCCF65FA44DF2 /* Pods-iPod Emulator 2.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		82F08A9E23AD9D6500D189C8 /* iPod Emulator 2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82F08AC923AD9D6800D189C8 /* Build configuration list for PBXNativeTarget "iPod Emulator 2" */;
+			buildPhases = (
+				87C76D67C4D94E538AC64B84 /* [CP] Check Pods Manifest.lock */,
+				82F08A9B23AD9D6500D189C8 /* Sources */,
+				82F08A9C23AD9D6500D189C8 /* Frameworks */,
+				82F08A9D23AD9D6500D189C8 /* Resources */,
+				4DEC02405420341DCD9A0CDA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iPod Emulator 2";
+			productName = "iPod Emulator 2";
+			productReference = 82F08A9F23AD9D6500D189C8 /* iPod Emulator 2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		82F08AB423AD9D6800D189C8 /* iPod Emulator 2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82F08ACC23AD9D6800D189C8 /* Build configuration list for PBXNativeTarget "iPod Emulator 2Tests" */;
+			buildPhases = (
+				82F08AB123AD9D6800D189C8 /* Sources */,
+				82F08AB223AD9D6800D189C8 /* Frameworks */,
+				82F08AB323AD9D6800D189C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				82F08AB723AD9D6800D189C8 /* PBXTargetDependency */,
+			);
+			name = "iPod Emulator 2Tests";
+			productName = "iPod Emulator 2Tests";
+			productReference = 82F08AB523AD9D6800D189C8 /* iPod Emulator 2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		82F08ABF23AD9D6800D189C8 /* iPod Emulator 2UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82F08ACF23AD9D6800D189C8 /* Build configuration list for PBXNativeTarget "iPod Emulator 2UITests" */;
+			buildPhases = (
+				82F08ABC23AD9D6800D189C8 /* Sources */,
+				82F08ABD23AD9D6800D189C8 /* Frameworks */,
+				82F08ABE23AD9D6800D189C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				82F08AC223AD9D6800D189C8 /* PBXTargetDependency */,
+			);
+			name = "iPod Emulator 2UITests";
+			productName = "iPod Emulator 2UITests";
+			productReference = 82F08AC023AD9D6800D189C8 /* iPod Emulator 2UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		82F08A9723AD9D6500D189C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Greetings With Crypto";
+				TargetAttributes = {
+					82F08A9E23AD9D6500D189C8 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					82F08AB423AD9D6800D189C8 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 82F08A9E23AD9D6500D189C8;
+					};
+					82F08ABF23AD9D6800D189C8 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 82F08A9E23AD9D6500D189C8;
+					};
+				};
+			};
+			buildConfigurationList = 82F08A9A23AD9D6500D189C8 /* Build configuration list for PBXProject "iPod Emulator 2" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 82F08A9623AD9D6500D189C8;
+			productRefGroup = 82F08AA023AD9D6500D189C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				82F08A9E23AD9D6500D189C8 /* iPod Emulator 2 */,
+				82F08AB423AD9D6800D189C8 /* iPod Emulator 2Tests */,
+				82F08ABF23AD9D6800D189C8 /* iPod Emulator 2UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		82F08A9D23AD9D6500D189C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82F08AAF23AD9D6700D189C8 /* LaunchScreen.storyboard in Resources */,
+				82F08AAC23AD9D6700D189C8 /* Assets.xcassets in Resources */,
+				8265E43523B84738005BF12F /* devToken.txt in Resources */,
+				82F08AAA23AD9D6500D189C8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82F08AB323AD9D6800D189C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82F08ABE23AD9D6800D189C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4DEC02405420341DCD9A0CDA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iPod Emulator 2/Pods-iPod Emulator 2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iPod Emulator 2/Pods-iPod Emulator 2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iPod Emulator 2/Pods-iPod Emulator 2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87C76D67C4D94E538AC64B84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iPod Emulator 2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		82F08A9B23AD9D6500D189C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8270AC0B23B02C0A00ECD5B2 /* Song.swift in Sources */,
+				82F08AA723AD9D6500D189C8 /* ViewController.swift in Sources */,
+				82660AFF23B0010D00FE35D6 /* Request.swift in Sources */,
+				82FE010623AF022F001D7D93 /* UIColor.swift in Sources */,
+				82FE010E23AF2E75001D7D93 /* BaseViewController.swift in Sources */,
+				82FE011023AFE60D001D7D93 /* Model.swift in Sources */,
+				82F08AD523AE086A00D189C8 /* MainMenuVC.swift in Sources */,
+				8270AC0D23B0774600ECD5B2 /* PlayerViewController.swift in Sources */,
+				82603DAE23B0884200D8DDED /* MusicPlayerManager.swift in Sources */,
+				82FE010C23AF2964001D7D93 /* MusicMenuVC.swift in Sources */,
+				82FE010823AF05C9001D7D93 /* iPodNavigationBar.swift in Sources */,
+				8265E43723B84853005BF12F /* Helper.swift in Sources */,
+				82603DB023B288A600D8DDED /* ProgressView.swift in Sources */,
+				8270AC0723B01BAE00ECD5B2 /* PlaylistViewController.swift in Sources */,
+				82FE010423AEFFA2001D7D93 /* MainCell.swift in Sources */,
+				82F08AD323AD9D8B00D189C8 /* ClickWheelView.swift in Sources */,
+				82FE010A23AF1138001D7D93 /* UIImage.swift in Sources */,
+				82F08AA323AD9D6500D189C8 /* AppDelegate.swift in Sources */,
+				8270AC0923B020A900ECD5B2 /* PlaylistDetailViewController.swift in Sources */,
+				82660B0123B0043100FE35D6 /* Network.swift in Sources */,
+				82F08AA523AD9D6500D189C8 /* SceneDelegate.swift in Sources */,
+				82660B0323B0147800FE35D6 /* Playlist.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82F08AB123AD9D6800D189C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82F08ABA23AD9D6800D189C8 /* iPod_Emulator_2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82F08ABC23AD9D6800D189C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82F08AC523AD9D6800D189C8 /* iPod_Emulator_2UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		82F08AB723AD9D6800D189C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82F08A9E23AD9D6500D189C8 /* iPod Emulator 2 */;
+			targetProxy = 82F08AB623AD9D6800D189C8 /* PBXContainerItemProxy */;
+		};
+		82F08AC223AD9D6800D189C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82F08A9E23AD9D6500D189C8 /* iPod Emulator 2 */;
+			targetProxy = 82F08AC123AD9D6800D189C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		82F08AA823AD9D6500D189C8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82F08AA923AD9D6500D189C8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		82F08AAD23AD9D6700D189C8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82F08AAE23AD9D6700D189C8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		82F08AC723AD9D6800D189C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		82F08AC823AD9D6800D189C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		82F08ACA23AD9D6800D189C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4172703158D6B15B4E669D67 /* Pods-iPod Emulator 2.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AMVCND23WZ;
+				INFOPLIST_FILE = "iPod Emulator 2/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.greetingswithcrypto.iPod-Emulator-2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		82F08ACB23AD9D6800D189C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 445D0923BBABCCF65FA44DF2 /* Pods-iPod Emulator 2.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AMVCND23WZ;
+				INFOPLIST_FILE = "iPod Emulator 2/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.greetingswithcrypto.iPod-Emulator-2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		82F08ACD23AD9D6800D189C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AMVCND23WZ;
+				INFOPLIST_FILE = "iPod Emulator 2Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.greetingswithcrypto.iPod-Emulator-2Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iPod Emulator 2.app/iPod Emulator 2";
+			};
+			name = Debug;
+		};
+		82F08ACE23AD9D6800D189C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AMVCND23WZ;
+				INFOPLIST_FILE = "iPod Emulator 2Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.greetingswithcrypto.iPod-Emulator-2Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iPod Emulator 2.app/iPod Emulator 2";
+			};
+			name = Release;
+		};
+		82F08AD023AD9D6800D189C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AMVCND23WZ;
+				INFOPLIST_FILE = "iPod Emulator 2UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.greetingswithcrypto.iPod-Emulator-2UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "iPod Emulator 2";
+			};
+			name = Debug;
+		};
+		82F08AD123AD9D6800D189C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AMVCND23WZ;
+				INFOPLIST_FILE = "iPod Emulator 2UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.greetingswithcrypto.iPod-Emulator-2UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "iPod Emulator 2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		82F08A9A23AD9D6500D189C8 /* Build configuration list for PBXProject "iPod Emulator 2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82F08AC723AD9D6800D189C8 /* Debug */,
+				82F08AC823AD9D6800D189C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82F08AC923AD9D6800D189C8 /* Build configuration list for PBXNativeTarget "iPod Emulator 2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82F08ACA23AD9D6800D189C8 /* Debug */,
+				82F08ACB23AD9D6800D189C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82F08ACC23AD9D6800D189C8 /* Build configuration list for PBXNativeTarget "iPod Emulator 2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82F08ACD23AD9D6800D189C8 /* Debug */,
+				82F08ACE23AD9D6800D189C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82F08ACF23AD9D6800D189C8 /* Build configuration list for PBXNativeTarget "iPod Emulator 2UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82F08AD023AD9D6800D189C8 /* Debug */,
+				82F08AD123AD9D6800D189C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 82F08A9723AD9D6500D189C8 /* Project object */;
+}
