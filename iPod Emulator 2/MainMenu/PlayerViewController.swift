@@ -11,6 +11,11 @@ import SDWebImage
 import MediaPlayer
 
 class PlayerViewController: UIViewController {
+    
+    enum SeekDirection {
+        case forward
+        case backward
+    }
 
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -29,6 +34,8 @@ class PlayerViewController: UIViewController {
     var query: MPMediaQuery!
     var musicPlayerManager = Model.shared.musicPlayerManager
     var timer: Timer?
+    var seekDirection: SeekDirection?
+    var seekLastValue: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +82,7 @@ class PlayerViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateProgressView()
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateViewRepeat), userInfo: nil, repeats: true)
+        startTimer()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -84,18 +91,18 @@ class PlayerViewController: UIViewController {
     }
 
     func updateView() {
-        DispatchQueue.main.async {
-            guard let currentMediaItem = self.musicPlayerManager.currentMediaItem,
-                let selectedRow = self.musicPlayerManager.selectedRow else { return }
+//        guard let currentMediaItem = self.musicPlayerManager.currentMediaItem,
+//            let selectedRow = self.musicPlayerManager.selectedRow else { return }
 
-            self.totalLabel.text = "\(selectedRow + 1) of \(Model.shared.musicPlayerManager.queue?.count ?? 1)"
-            self.nameLabel.text = self.musicPlayerManager.currentMediaItem?.title
-            self.artistLabel.text = self.musicPlayerManager.currentMediaItem?.artist
-            self.albumLabel.text = self.musicPlayerManager.currentMediaItem?.albumTitle
-            self.imageView.image = self.musicPlayerManager.currentMediaItem?.artwork?.image(at: CGSize(width: 150, height: 150))
-            let formattedString = self.stringForTime(time: currentMediaItem.playbackDuration)
-            self.endSeekLabel.text = formattedString
-        }
+        guard let selectedRow = self.musicPlayerManager.selectedRow else { return }
+        
+        self.totalLabel.text = "\(selectedRow + 1) of \(Model.shared.musicPlayerManager.queue?.count ?? 1)"
+        self.nameLabel.text = self.musicPlayerManager.currentMediaItem?.title
+        self.artistLabel.text = self.musicPlayerManager.currentMediaItem?.artist
+        self.albumLabel.text = self.musicPlayerManager.currentMediaItem?.albumTitle
+        self.imageView.image = self.musicPlayerManager.currentMediaItem?.artwork?.image(at: CGSize(width: 150, height: 150))
+        //let formattedString = self.stringForTime(time: currentMediaItem.playbackDuration)
+        //self.endSeekLabel.text = formattedString
     }
     
     @objc func updateViewRepeat() {
@@ -110,11 +117,10 @@ class PlayerViewController: UIViewController {
     
     func updateProgressView() {
         guard let currentMediaItem = musicPlayerManager.currentMediaItem else { return }
-        let time = Model.shared.musicPlayerManager.musicPlayerController.currentPlaybackTime
-        let ratio = time / currentMediaItem.playbackDuration
-        let progressVal = 0.5 * ratio // 0.5 is the max value for the progress bar
+        let time = musicPlayerManager.musicPlayerController.currentPlaybackTime
+        let progressVal = ProgressView.convertTime(time, totalTime: currentMediaItem.playbackDuration)
         let difference = currentMediaItem.playbackDuration - time
-        self.endSeekLabel.text = "- \(self.stringForTime(time: difference))"
+        self.endSeekLabel.text = "-\(self.stringForTime(time: difference))"
         self.startSeekLabel.text = self.stringForTime(time: time)
         self.progressView.animateToPosition(CGFloat(progressVal), animate: false)
     }
@@ -125,13 +131,21 @@ class PlayerViewController: UIViewController {
     }
     
     deinit {
-        timer?.invalidate()
-        timer = nil
+        stopTimer()
         
         // Remove all notification observers.
         NotificationCenter.default.removeObserver(self,
                                                   name: MusicPlayerManager.didUpdateState,
                                                   object: nil)
+    }
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateViewRepeat), userInfo: nil, repeats: true)
+    }
+    
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
     }
     
     @objc func handleMusicPlayerManagerDidUpdateState() {
@@ -183,15 +197,28 @@ class PlayerViewController: UIViewController {
 
 extension PlayerViewController: ClickWheelViewDelegate {
     func clickWheelBegan(value: Int) {
-        
+        stopTimer()
     }
     
     func clickWheelValue(value: Int) {
+        guard let currentMediaItem = musicPlayerManager.currentMediaItem else { return }
+        if seekLastValue == nil {
+            seekLastValue = value
+            return
+        }
         
+        seekDirection = seekLastValue! < value ? .forward : .backward
+        var currentTime = musicPlayerManager.musicPlayerController.currentPlaybackTime
+        currentTime = seekDirection == .forward ? currentTime + 2 : currentTime - 2
+        musicPlayerManager.musicPlayerController.currentPlaybackTime = currentTime
+        seekLastValue = value
+        updateProgressView()
+//        let progressVal = ProgressView.convertTime(currentTime, totalTime: currentMediaItem.playbackDuration)
+//        progressView.animateToPosition(CGFloat(progressVal), animate: false)
     }
     
     func clickWheelEnded(value: Int) {
-        
+        startTimer()
     }
     
     func playPauseSelected() {

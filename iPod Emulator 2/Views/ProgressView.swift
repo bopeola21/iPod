@@ -69,4 +69,9 @@ class ProgressView: UIView {
         lastValue = 0
         animateToPosition(lastValue!, animate: true)
     }
+    
+    class func convertTime(_ currentTime: Double, totalTime: Double) -> Double {
+        let ratio = currentTime / totalTime
+        return 0.5 * ratio // 0.5 is the max value for the progress bar
+    }
 }
