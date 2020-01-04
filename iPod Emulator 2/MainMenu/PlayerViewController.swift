@@ -151,7 +151,7 @@ class PlayerViewController: UIViewController {
     @objc func handleMusicPlayerManagerDidUpdateState() {
         ableToUpdate = true
         let nowPlayingItem = musicPlayerManager.musicPlayerController.nowPlayingItem
-        progressView.reset()
+  //      progressView.reset()
         
         if musicPlayerManager.currentMediaItem?.title != nowPlayingItem?.title,
             musicPlayerManager.currentMediaItem?.artist != nowPlayingItem?.artist,
@@ -213,6 +213,7 @@ extension PlayerViewController: ClickWheelViewDelegate {
         musicPlayerManager.musicPlayerController.currentPlaybackTime = currentTime
         seekLastValue = value
         updateProgressView()
+        
 //        let progressVal = ProgressView.convertTime(currentTime, totalTime: currentMediaItem.playbackDuration)
 //        progressView.animateToPosition(CGFloat(progressVal), animate: false)
     }
@@ -235,7 +236,6 @@ extension PlayerViewController: ClickWheelViewDelegate {
         
         let newRow = selectedRow + 1
         setMedia(index: newRow)
-        
         ableToUpdate = false
     }
     
