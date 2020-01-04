@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M95-cv-KHR">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="M95-cv-KHR" customClass="ViewController" customModule="iPod_Emulator_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FhA-c8-1Jr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uOi-lv-5uM" customClass="ClickWheelView" customModule="iPod_Emulator_2" customModuleProvider="target">
-                                <rect key="frame" x="87" y="582" width="240" height="240"/>
+                                <rect key="frame" x="44" y="67.666666666666686" width="240" height="240"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uOi-lv-5uM" secondAttribute="height" multiplier="1:1" id="ZFL-t0-6Ei"/>
@@ -24,24 +24,24 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rTw-h6-Wmh">
-                                <rect key="frame" x="20" y="54" width="374" height="468"/>
+                                <rect key="frame" x="314" y="10" width="454" height="334"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgB-v2-PFQ" customClass="iPodNavigationBar" customModule="iPod_Emulator_2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="454" height="25"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="cuo-PY-Bfc"/>
+                                            <constraint firstAttribute="height" priority="990" constant="25" id="cuo-PY-Bfc"/>
                                         </constraints>
                                     </view>
                                     <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i84-YN-mNd">
-                                        <rect key="frame" x="0.0" y="25" width="374" height="443"/>
+                                        <rect key="frame" x="0.0" y="25" width="454" height="309"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <segue destination="Vo0-Mm-zra" kind="embed" identifier="mainMenuNav" id="23r-b9-GJu"/>
                                         </connections>
                                     </containerView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ie6-bP-8Ig">
-                                        <rect key="frame" x="0.0" y="25" width="374" height="1"/>
+                                        <rect key="frame" x="0.0" y="25" width="454" height="1"/>
                                         <color key="backgroundColor" red="0.36470588235294116" green="0.40000000000000002" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="I05-PX-EsR"/>
@@ -66,13 +66,63 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rTw-h6-Wmh" firstAttribute="top" secondItem="hgb-aZ-Kwg" secondAttribute="top" constant="10" id="5vu-M3-0od"/>
+                            <constraint firstItem="hgb-aZ-Kwg" firstAttribute="bottom" secondItem="rTw-h6-Wmh" secondAttribute="bottom" constant="10" id="9Yk-iu-KET"/>
                             <constraint firstItem="uOi-lv-5uM" firstAttribute="centerX" secondItem="hgb-aZ-Kwg" secondAttribute="centerX" id="Ju9-Lw-NJ5"/>
                             <constraint firstItem="uOi-lv-5uM" firstAttribute="top" secondItem="rTw-h6-Wmh" secondAttribute="bottom" constant="60" id="RYD-Ru-bJt"/>
-                            <constraint firstItem="hgb-aZ-Kwg" firstAttribute="bottom" secondItem="uOi-lv-5uM" secondAttribute="bottom" constant="40" id="eTg-oJ-4eX"/>
+                            <constraint firstItem="uOi-lv-5uM" firstAttribute="leading" secondItem="hgb-aZ-Kwg" secondAttribute="leading" id="ZzG-mk-2UW"/>
+                            <constraint firstItem="rTw-h6-Wmh" firstAttribute="leading" secondItem="uOi-lv-5uM" secondAttribute="trailing" constant="30" id="ac0-5T-z9z"/>
+                            <constraint firstItem="hgb-aZ-Kwg" firstAttribute="trailing" secondItem="rTw-h6-Wmh" secondAttribute="trailing" id="cY7-0a-ZYO"/>
+                            <constraint firstItem="uOi-lv-5uM" firstAttribute="centerY" secondItem="FhA-c8-1Jr" secondAttribute="centerY" id="dGH-ce-caF"/>
+                            <constraint firstItem="hgb-aZ-Kwg" firstAttribute="bottom" secondItem="uOi-lv-5uM" secondAttribute="bottom" constant="40" id="drD-dX-UUx"/>
+                            <constraint firstItem="hgb-aZ-Kwg" firstAttribute="trailing" secondItem="rTw-h6-Wmh" secondAttribute="trailing" constant="30" id="gBf-8G-6oL"/>
                             <constraint firstItem="rTw-h6-Wmh" firstAttribute="leading" secondItem="hgb-aZ-Kwg" secondAttribute="leading" constant="20" id="j2U-ep-5Os"/>
                             <constraint firstItem="hgb-aZ-Kwg" firstAttribute="trailing" secondItem="rTw-h6-Wmh" secondAttribute="trailing" constant="20" id="kBR-pH-yGi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hgb-aZ-Kwg"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9Yk-iu-KET"/>
+                                <exclude reference="cY7-0a-ZYO"/>
+                                <exclude reference="drD-dX-UUx"/>
+                                <exclude reference="gBf-8G-6oL"/>
+                                <exclude reference="kBR-pH-yGi"/>
+                                <exclude reference="Ju9-Lw-NJ5"/>
+                                <exclude reference="RYD-Ru-bJt"/>
+                                <exclude reference="ZzG-mk-2UW"/>
+                                <exclude reference="dGH-ce-caF"/>
+                                <exclude reference="5vu-M3-0od"/>
+                                <exclude reference="ac0-5T-z9z"/>
+                                <exclude reference="j2U-ep-5Os"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="9Yk-iu-KET"/>
+                                <include reference="cY7-0a-ZYO"/>
+                                <include reference="ZzG-mk-2UW"/>
+                                <include reference="dGH-ce-caF"/>
+                                <include reference="ac0-5T-z9z"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="5vu-M3-0od"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="gBf-8G-6oL"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="drD-dX-UUx"/>
+                                <include reference="kBR-pH-yGi"/>
+                                <include reference="Ju9-Lw-NJ5"/>
+                                <include reference="RYD-Ru-bJt"/>
+                                <include reference="j2U-ep-5Os"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="clickWheel" destination="uOi-lv-5uM" id="HIF-W9-BiH"/>
@@ -83,14 +133,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zL-g4-TVd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139.13043478260872" y="132.58928571428572"/>
+            <point key="canvasLocation" x="136.80000000000001" y="130.04926108374386"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fvR-zl-SLU">
             <objects>
                 <navigationController id="Vo0-Mm-zra" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PyZ-kf-a4s">
-                        <rect key="frame" x="0.0" y="44" width="374" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="454" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -106,29 +156,29 @@
             <objects>
                 <viewController id="IYm-h6-LBr" customClass="MainMenuVC" customModule="iPod_Emulator_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vxK-Lc-JMI">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="443"/>
+                        <rect key="frame" x="0.0" y="0.0" width="454" height="309"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D1e-ia-8r3">
-                                <rect key="frame" x="0.0" y="88" width="374" height="355"/>
+                                <rect key="frame" x="44" y="32" width="410" height="277"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="2000" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainCell" id="gZL-2C-j7w" customClass="MainCell" customModule="iPod_Emulator_2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="410" height="32"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gZL-2C-j7w" id="hHp-q1-dau">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="32.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="410" height="32"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHo-87-NhQ">
-                                                    <rect key="frame" x="10" y="7" width="44.5" height="20.5"/>
+                                                    <rect key="frame" x="9.9999999999999964" y="7" width="44.666666666666657" height="20"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                                     <color key="textColor" red="0.0078431372549019607" green="0.0078431372549019607" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="R1a-nf-SqF">
-                                                    <rect key="frame" x="356" y="10.5" width="12" height="12"/>
+                                                    <rect key="frame" x="392" y="10" width="12" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="DT6-os-uGQ"/>
                                                         <constraint firstAttribute="width" secondItem="R1a-nf-SqF" secondAttribute="height" multiplier="1:1" id="vqe-N8-YRi"/>
@@ -178,29 +228,29 @@
             <objects>
                 <viewController id="CHg-gs-95I" customClass="MusicMenuVC" customModule="iPod_Emulator_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m3p-I4-La5">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="443"/>
+                        <rect key="frame" x="0.0" y="0.0" width="454" height="309"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="75R-gg-mC0">
-                                <rect key="frame" x="0.0" y="88" width="374" height="355"/>
+                                <rect key="frame" x="44" y="32" width="410" height="277"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <inset key="separatorInset" minX="2000" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainCell" id="BmW-kK-3TP" customClass="MainCell" customModule="iPod_Emulator_2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="410" height="32"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BmW-kK-3TP" id="Zj7-t4-3WL">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="32.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="410" height="32"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDQ-Ho-knp">
-                                                    <rect key="frame" x="10" y="7" width="44.5" height="20.5"/>
+                                                    <rect key="frame" x="9.9999999999999964" y="7" width="44.666666666666657" height="20"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                                     <color key="textColor" red="0.0078431372550000003" green="0.0078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="1pc-ZL-TkY">
-                                                    <rect key="frame" x="356" y="10.5" width="12" height="12"/>
+                                                    <rect key="frame" x="392" y="10" width="12" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="1pc-ZL-TkY" secondAttribute="height" multiplier="1:1" id="99l-3N-3dC"/>
                                                         <constraint firstAttribute="height" constant="12" id="OS3-Am-3f6"/>
@@ -249,29 +299,29 @@
             <objects>
                 <viewController id="KJy-S3-KhM" customClass="PlaylistViewController" customModule="iPod_Emulator_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="myY-Xr-D6e">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="443"/>
+                        <rect key="frame" x="0.0" y="0.0" width="454" height="309"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UFY-Ke-oVC">
-                                <rect key="frame" x="0.0" y="88" width="374" height="355"/>
+                                <rect key="frame" x="44" y="32" width="410" height="277"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <inset key="separatorInset" minX="2000" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainCell" id="pcm-Mz-za3" customClass="MainCell" customModule="iPod_Emulator_2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="410" height="32"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pcm-Mz-za3" id="Maq-Ci-inc">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="32.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="410" height="32"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBb-C0-U3s">
-                                                    <rect key="frame" x="10" y="7" width="44.5" height="20.5"/>
+                                                    <rect key="frame" x="9.9999999999999964" y="7" width="44.666666666666657" height="20"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                                     <color key="textColor" red="0.0078431372550000003" green="0.0078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="zWk-BD-WBW">
-                                                    <rect key="frame" x="356" y="10.5" width="12" height="12"/>
+                                                    <rect key="frame" x="392" y="10" width="12" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="zWk-BD-WBW" secondAttribute="height" multiplier="1:1" id="B8F-aK-tgL"/>
                                                         <constraint firstAttribute="height" constant="12" id="cPN-W1-O0n"/>
@@ -321,29 +371,29 @@
             <objects>
                 <viewController id="dDy-aU-R4l" customClass="PlaylistDetailViewController" customModule="iPod_Emulator_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1PM-oa-vae">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="443"/>
+                        <rect key="frame" x="0.0" y="0.0" width="454" height="309"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2LP-No-iag">
-                                <rect key="frame" x="0.0" y="88" width="374" height="355"/>
+                                <rect key="frame" x="44" y="32" width="410" height="277"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <inset key="separatorInset" minX="2000" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainCell" id="slg-yG-KGJ" customClass="MainCell" customModule="iPod_Emulator_2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="410" height="32"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="slg-yG-KGJ" id="l6X-Kc-vDx">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="32.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="410" height="32"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGf-fh-3Zl">
-                                                    <rect key="frame" x="10" y="7" width="44.5" height="20.5"/>
+                                                    <rect key="frame" x="9.9999999999999964" y="7" width="44.666666666666657" height="20"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                                     <color key="textColor" red="0.0078431372550000003" green="0.0078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="3Nv-5Z-DAX">
-                                                    <rect key="frame" x="356" y="10.5" width="12" height="12"/>
+                                                    <rect key="frame" x="392" y="10" width="12" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="HPU-9g-b8Q"/>
                                                         <constraint firstAttribute="width" secondItem="3Nv-5Z-DAX" secondAttribute="height" multiplier="1:1" id="X2a-bB-I0B"/>
@@ -392,11 +442,11 @@
             <objects>
                 <viewController id="9Eo-jL-WFX" customClass="PlayerViewController" customModule="iPod_Emulator_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pj4-dJ-zh2">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="443"/>
+                        <rect key="frame" x="0.0" y="0.0" width="454" height="309"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBq-yG-KfX">
-                                <rect key="frame" x="0.0" y="88" width="374" height="355"/>
+                                <rect key="frame" x="44" y="32" width="410" height="277"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 of 14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZn-ME-Mtg">
                                         <rect key="frame" x="16" y="12" width="54" height="20"/>
@@ -405,22 +455,22 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ad1-O2-7ME">
-                                        <rect key="frame" x="177.5" y="79" width="180.5" height="80"/>
+                                        <rect key="frame" x="183.66666666666663" y="82" width="210.33333333333337" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ride With Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2A-bs-H7d">
-                                                <rect key="frame" x="0.0" y="0.0" width="180.5" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="210.33333333333334" height="20"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                                 <color key="textColor" red="0.0078431372550000003" green="0.0078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nelly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEi-gp-bHp">
-                                                <rect key="frame" x="0.0" y="30" width="180.5" height="20"/>
+                                                <rect key="frame" x="0.0" y="30" width="210.33333333333334" height="20"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                                 <color key="textColor" red="0.0078431372550000003" green="0.0078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Grammar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUt-YT-K00">
-                                                <rect key="frame" x="0.0" y="60" width="180.5" height="20"/>
+                                                <rect key="frame" x="0.0" y="60" width="210.33333333333334" height="20"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                                 <color key="textColor" red="0.0078431372550000003" green="0.0078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -441,25 +491,25 @@
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c8B-ID-nMv">
-                                        <rect key="frame" x="16" y="44" width="149.5" height="149.5"/>
+                                        <rect key="frame" x="16" y="44" width="155.66666666666666" height="155.66666666666666"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="c8B-ID-nMv" secondAttribute="height" multiplier="1:1" id="y4j-Sx-6Qg"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WN-kQ-0nE">
-                                        <rect key="frame" x="16" y="291.5" width="35" height="20"/>
+                                        <rect key="frame" x="16" y="253.66666666666669" width="35" height="20"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                         <color key="textColor" red="0.0078431372550000003" green="0.0078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4:12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsz-JS-2zW">
-                                        <rect key="frame" x="323" y="291.5" width="35" height="20"/>
+                                        <rect key="frame" x="359" y="253.66666666666669" width="35" height="20"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                         <color key="textColor" red="0.0078431372550000003" green="0.0078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8eg-8J-P5Y" customClass="ProgressView" customModule="iPod_Emulator_2" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="257.5" width="342" height="22"/>
+                                        <rect key="frame" x="16" y="219.66666666666666" width="378" height="22"/>
                                         <color key="backgroundColor" red="0.91966727447406205" green="0.91522443739930814" blue="0.92411011154881595" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="iBe-gJ-k3s"/>
@@ -478,14 +528,36 @@
                                     <constraint firstItem="Ad1-O2-7ME" firstAttribute="centerY" secondItem="c8B-ID-nMv" secondAttribute="centerY" id="OOz-On-NHO"/>
                                     <constraint firstAttribute="trailing" secondItem="Ad1-O2-7ME" secondAttribute="trailing" constant="16" id="PiY-VC-kAx"/>
                                     <constraint firstItem="Hsz-JS-2zW" firstAttribute="trailing" secondItem="8eg-8J-P5Y" secondAttribute="trailing" id="Pur-Oc-BCj"/>
+                                    <constraint firstItem="c8B-ID-nMv" firstAttribute="width" secondItem="OBq-yG-KfX" secondAttribute="width" multiplier="0.38" id="XT1-Qv-IGe"/>
                                     <constraint firstItem="Hsz-JS-2zW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9WN-kQ-0nE" secondAttribute="trailing" constant="16" id="bxw-D6-ke4"/>
                                     <constraint firstItem="8eg-8J-P5Y" firstAttribute="trailing" secondItem="PUt-YT-K00" secondAttribute="trailing" id="d4G-WM-Vov"/>
                                     <constraint firstItem="Ad1-O2-7ME" firstAttribute="leading" secondItem="c8B-ID-nMv" secondAttribute="trailing" constant="12" id="ewR-bh-DNY"/>
                                     <constraint firstItem="8eg-8J-P5Y" firstAttribute="top" secondItem="c8B-ID-nMv" secondAttribute="bottom" constant="64" id="i05-Eg-d9k"/>
                                     <constraint firstItem="Hsz-JS-2zW" firstAttribute="top" secondItem="9WN-kQ-0nE" secondAttribute="top" id="ixd-0n-hho"/>
+                                    <constraint firstItem="8eg-8J-P5Y" firstAttribute="top" secondItem="c8B-ID-nMv" secondAttribute="bottom" constant="20" id="nP1-4a-odf"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DZn-ME-Mtg" secondAttribute="trailing" constant="16" id="q46-62-9eA"/>
                                     <constraint firstItem="9WN-kQ-0nE" firstAttribute="top" secondItem="8eg-8J-P5Y" secondAttribute="bottom" constant="12" id="wq8-53-AGu"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="NkG-ca-Art"/>
+                                        <exclude reference="XT1-Qv-IGe"/>
+                                        <exclude reference="i05-Eg-d9k"/>
+                                        <exclude reference="nP1-4a-odf"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="XT1-Qv-IGe"/>
+                                        <include reference="nP1-4a-odf"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="NkG-ca-Art"/>
+                                        <include reference="i05-Eg-d9k"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
