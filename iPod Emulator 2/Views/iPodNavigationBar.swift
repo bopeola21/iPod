@@ -29,7 +29,6 @@ class iPodNavigationBar: UIView {
     var navTitleLabel = UILabel()
     
     override func draw(_ rect: CGRect) {
-        gradient.frame = self.bounds
         let color1 = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0)
         let color2 = UIColor(red:0.61, green:0.63, blue:0.61, alpha:1.0)
         gradient.colors = [color1.cgColor, color2.cgColor]
@@ -43,9 +42,13 @@ class iPodNavigationBar: UIView {
         iPodNavigationBar.shared.navTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
         iPodNavigationBar.shared.navTitleLabel.text = "iPod"
         iPodNavigationBar.shared.navTitleLabel.font = UIFont(name: "Helvetica-Bold", size: 17)
-//        iPodNavigationBar.shared.navTitleLabel.textColor = .iPodTextColor
+    //        iPodNavigationBar.shared.navTitleLabel.textColor = .iPodTextColor
         
         iPodNavigationBar.shared.navTitleLabel.textColor = UIColor.darkGray
-
-   }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gradient.frame = self.bounds
+    }
 }

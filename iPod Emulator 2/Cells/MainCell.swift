@@ -12,6 +12,8 @@ class MainCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var arrowImageView: UIImageView!
+    let gradient = CAGradientLayer()
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,8 +21,6 @@ class MainCell: UITableViewCell {
         let selectedView = UIView()
         selectedView.frame = bounds
         
-        let gradient = CAGradientLayer()
-        gradient.frame = self.bounds
         let color1 = UIColor(red:0.31, green:0.67, blue:0.99, alpha:1.0)
         let color2 = UIColor(red:0.03, green:0.45, blue:0.82, alpha:1.0)
         gradient.colors = [color1.cgColor, color2.cgColor]
@@ -28,6 +28,11 @@ class MainCell: UITableViewCell {
         selectedView.layer.addSublayer(gradient)
 
         selectedBackgroundView = selectedView
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gradient.frame = self.bounds
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

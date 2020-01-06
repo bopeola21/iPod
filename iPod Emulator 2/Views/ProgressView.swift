@@ -49,24 +49,35 @@ class ProgressView: UIView {
         basicAnimation?.fromValue = 0
         basicAnimation?.toValue = 0
         basicAnimation?.duration = 1
-        
         basicAnimation?.fillMode = CAMediaTimingFillMode.forwards
-//        basicAnimation?.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        basicAnimation?.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         basicAnimation?.isRemovedOnCompletion = false
     }
     
     func animateToPosition(_ toValue: CGFloat, animate: Bool) {
         
-        basicAnimation?.fromValue = lastValue ?? 0.0
-        let newValue = toValue
-        basicAnimation?.toValue = newValue
-        lastValue = newValue
+//        CATransaction.begin()
+//        CATransaction.setDisableActions(true)
 
+        basicAnimation?.fromValue = lastValue ?? 0.0
+        basicAnimation?.toValue = toValue
+        lastValue = toValue
+
+        basicAnimation?.duration = animate ? 1 : 0
         self.shapeLayer.add(self.basicAnimation!, forKey: "customAnimation")
+
+       // CATransaction.commit()
+        
+
     }
     
-    func reset() {
-        lastValue = 0
-        animateToPosition(lastValue!, animate: true)
+//    func reset() {
+//        lastValue = 0
+//        animateToPosition(lastValue!, animate: false)
+//    }
+    
+    class func convertTime(_ currentTime: Double, totalTime: Double) -> Double {
+        let ratio = currentTime / totalTime
+        return 0.5 * ratio // 0.5 is the max value for the progress bar
     }
 }

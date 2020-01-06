@@ -15,8 +15,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipod_launch" translatesAutoresizingMaskIntoConstraints="NO" id="USb-Tg-R3k">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="USb-Tg-R3k">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <variation key="heightClass=compact" image="iPod_land"/>
+                                <variation key="heightClass=regular-widthClass=compact" image="ipod_launch"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -35,6 +37,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ipod_launch" width="1126" height="2437"/>
+        <image name="iPod_land" width="2437" height="1126"/>
+        <image name="ipod_launch" width="1125.5" height="2436.5"/>
     </resources>
 </document>
