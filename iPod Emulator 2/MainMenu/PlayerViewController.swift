@@ -151,7 +151,7 @@ class PlayerViewController: UIViewController {
     @objc func handleMusicPlayerManagerDidUpdateState() {
         ableToUpdate = true
         let nowPlayingItem = musicPlayerManager.musicPlayerController.nowPlayingItem
-  //      progressView.reset()
+        progressView.reset()
         
         if musicPlayerManager.currentMediaItem?.title != nowPlayingItem?.title,
             musicPlayerManager.currentMediaItem?.artist != nowPlayingItem?.artist,
