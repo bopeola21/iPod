@@ -14,11 +14,16 @@ protocol ClickWheelViewDelegate: class {
     func clickWheelBegan(value: Int)
     func clickWheelValue(value: Int)
     func clickWheelEnded(value: Int)
+    func clickWheelDidScroll(scrolled: Bool)
     func playPauseSelected()
     func inButtonSelected()
     func fastForwardSelected()
     func rewindSelected()
     func menuSelected()
+}
+
+extension ClickWheelViewDelegate {
+    func clickWheelDidScroll(scrolled: Bool){}
 }
 
 //
@@ -49,6 +54,7 @@ class ClickWheelView: UIView {
     var textrect: CGRect!
     var inrect: CGRect!
     var clickViewSingleton = ClickViewSingleton.shared
+    var viewDidScroll = false
 
     override func draw(_ rect: CGRect) {
         let t = min(rect.height, rect.width)
@@ -160,6 +166,7 @@ class ClickWheelView: UIView {
                 }
                 
                 clickViewSingleton.delegate?.clickWheelValue(value: value)
+                viewDidScroll = true
             }
         }
         
@@ -171,7 +178,9 @@ class ClickWheelView: UIView {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         feedbackGenerator = nil
         curAngle = .nan
+        clickViewSingleton.delegate?.clickWheelDidScroll(scrolled: viewDidScroll)
         clickViewSingleton.delegate?.clickWheelEnded(value: value)
+        viewDidScroll = false
     }
     
     func containsKeyPoint(_ point: CGPoint) -> Bool {

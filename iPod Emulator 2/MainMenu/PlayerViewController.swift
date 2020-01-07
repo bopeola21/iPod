@@ -36,6 +36,7 @@ class PlayerViewController: UIViewController {
     var timer: Timer?
     var seekDirection: SeekDirection?
     var seekLastValue: Int?
+    var seekTime: TimeInterval?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,9 +116,9 @@ class PlayerViewController: UIViewController {
        // }
     }
     
-    func updateProgressView() {
+    func updateProgressView(withSeekTime seekTime: TimeInterval?=nil) {
         guard let currentMediaItem = musicPlayerManager.currentMediaItem else { return }
-        let time = musicPlayerManager.musicPlayerController.currentPlaybackTime
+        let time = seekTime ?? musicPlayerManager.musicPlayerController.currentPlaybackTime
         let progressVal = ProgressView.convertTime(time, totalTime: currentMediaItem.playbackDuration)
         let difference = currentMediaItem.playbackDuration - time
         self.endSeekLabel.text = "-\(self.stringForTime(time: difference))"
@@ -150,35 +151,37 @@ class PlayerViewController: UIViewController {
     
     @objc func handleMusicPlayerManagerDidUpdateState() {
         ableToUpdate = true
-        let nowPlayingItem = musicPlayerManager.musicPlayerController.nowPlayingItem
         progressView.reset()
-        
-        if musicPlayerManager.currentMediaItem?.title != nowPlayingItem?.title,
-            musicPlayerManager.currentMediaItem?.artist != nowPlayingItem?.artist,
-            musicPlayerManager.currentMediaItem?.playbackDuration != nowPlayingItem?.playbackDuration {
-            
-//            let index = musicPlayerManager.musicPlayerController.indexOfNowPlayingItem
-//            setMedia(index: index)
+        musicPlayerManager.selectedRow = musicPlayerManager.musicPlayerController.indexOfNowPlayingItem
+        updateView()
 
-            if let index = musicPlayerManager.queue?.firstIndex(where: { (item: MPMediaItem) -> Bool in
-                if nowPlayingItem?.title == item.title &&
-                    nowPlayingItem?.artist == item.artist &&
-                    nowPlayingItem?.playbackDuration == item.playbackDuration {
-                    return true
-                }
-                return false
-            }) {
-                //setMedia(index: index)
-                musicPlayerManager.selectedRow = index
-                //updateView()
-            } else {
-                musicPlayerManager.overrideCurrentMediaItem = nowPlayingItem
-                musicPlayerManager.selectedRow = 0
-                //updateView()
-            }
-            
-            updateView()
-        }
+        
+        
+//        if musicPlayerManager.currentMediaItem?.title != nowPlayingItem?.title,
+//            musicPlayerManager.currentMediaItem?.artist != nowPlayingItem?.artist,
+//            musicPlayerManager.currentMediaItem?.playbackDuration != nowPlayingItem?.playbackDuration {
+//
+////            let index = musicPlayerManager.musicPlayerController.indexOfNowPlayingItem
+////            setMedia(index: index)
+//
+//            if let index = musicPlayerManager.queue?.firstIndex(where: { (item: MPMediaItem) -> Bool in
+//                if nowPlayingItem?.title == item.title &&
+//                    nowPlayingItem?.artist == item.artist &&
+//                    nowPlayingItem?.playbackDuration == item.playbackDuration {
+//                    return true
+//                }
+//                return false
+//            }) {
+//                //setMedia(index: index)
+//                musicPlayerManager.selectedRow = index
+//                //updateView()
+//            } else {
+//                musicPlayerManager.overrideCurrentMediaItem = nowPlayingItem
+//                musicPlayerManager.selectedRow = 0
+//                //updateView()
+//            }
+//
+//        }
     }
     
     func stringForTime(time: TimeInterval) -> String {
@@ -197,29 +200,39 @@ class PlayerViewController: UIViewController {
 
 extension PlayerViewController: ClickWheelViewDelegate {
     func clickWheelBegan(value: Int) {
+        seekLastValue = nil
+        seekTime = musicPlayerManager.musicPlayerController.currentPlaybackTime
         stopTimer()
     }
     
     func clickWheelValue(value: Int) {
-        guard let currentMediaItem = musicPlayerManager.currentMediaItem else { return }
+        guard var seekTime = seekTime else { return }
         if seekLastValue == nil {
             seekLastValue = value
             return
         }
         
         seekDirection = seekLastValue! < value ? .forward : .backward
-        var currentTime = musicPlayerManager.musicPlayerController.currentPlaybackTime
-        currentTime = seekDirection == .forward ? currentTime + 2 : currentTime - 2
-        musicPlayerManager.musicPlayerController.currentPlaybackTime = currentTime
+        seekTime = seekDirection == .forward ? seekTime + 2 : seekTime - 2
         seekLastValue = value
-        updateProgressView()
-        
+        self.seekTime = seekTime
+        updateProgressView(withSeekTime: seekTime)
 //        let progressVal = ProgressView.convertTime(currentTime, totalTime: currentMediaItem.playbackDuration)
 //        progressView.animateToPosition(CGFloat(progressVal), animate: false)
     }
     
     func clickWheelEnded(value: Int) {
+        guard let seekTime = seekTime else { return }
+        updateProgressView(withSeekTime: seekTime)
         startTimer()
+    }
+    
+    func clickWheelDidScroll(scrolled: Bool) {
+        guard let seekTime = seekTime else { return }
+
+        if scrolled {
+            musicPlayerManager.musicPlayerController.currentPlaybackTime = seekTime
+        }
     }
     
     func playPauseSelected() {
@@ -236,6 +249,8 @@ extension PlayerViewController: ClickWheelViewDelegate {
         
         let newRow = selectedRow + 1
         setMedia(index: newRow)
+        seekTime = 0
+        updateProgressView(withSeekTime: seekTime)
         ableToUpdate = false
     }
     
@@ -246,7 +261,8 @@ extension PlayerViewController: ClickWheelViewDelegate {
         let newRow = selectedRow - 1
         if newRow <= 0 { return }
         setMedia(index: newRow)
-
+        seekTime = 0
+        updateProgressView(withSeekTime: seekTime)
         ableToUpdate = false
     }
     
