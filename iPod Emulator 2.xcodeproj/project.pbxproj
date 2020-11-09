@@ -77,7 +77,6 @@
 		82F08AA923AD9D6500D189C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82F08AAB23AD9D6700D189C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82F08AAE23AD9D6700D189C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		82F08AB023AD9D6700D189C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82F08AB523AD9D6800D189C8 /* iPod Emulator 2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iPod Emulator 2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F08AB923AD9D6800D189C8 /* iPod_Emulator_2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPod_Emulator_2Tests.swift; sourceTree = "<group>"; };
 		82F08ABB23AD9D6800D189C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +92,7 @@
 		82FE010B23AF2964001D7D93 /* MusicMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMenuVC.swift; sourceTree = "<group>"; };
 		82FE010D23AF2E75001D7D93 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		82FE010F23AFE60D001D7D93 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		E6E19C702559AEC40050F823 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,7 +220,7 @@
 				8265E43423B84738005BF12F /* devToken.txt */,
 				82F08AAB23AD9D6700D189C8 /* Assets.xcassets */,
 				82F08AAD23AD9D6700D189C8 /* LaunchScreen.storyboard */,
-				82F08AB023AD9D6700D189C8 /* Info.plist */,
+				E6E19C702559AEC40050F823 /* Info.plist */,
 			);
 			path = "iPod Emulator 2";
 			sourceTree = "<group>";
